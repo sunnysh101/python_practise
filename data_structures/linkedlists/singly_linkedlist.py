@@ -41,6 +41,25 @@ class LinkedList:
             print(cur.data)
             cur = cur.next
 
+    def delete_node(self, key):
+        cur = self.head
+
+        # If key is in the head node
+        if self.head and cur.data == key:
+            self.head = cur.next
+            cur = None
+        else:
+            # Set the reference to previous cursor and current cursor
+            prev_cur = cur
+            cur = cur.next
+            while cur:
+                if cur.data == key:
+                    prev_cur.next = cur.next
+                    cur = None
+                    break
+                prev_cur = cur
+                cur = cur.next
+
 
 def main():
     ll = LinkedList()
@@ -50,6 +69,11 @@ def main():
     ll.prepend(1)
     ll.prepend(2)
     ll.insert_after_node(10, 1000)
+    ll.delete_node(1000)
+    ll.delete_node(15)
+    ll.delete_node(2)
+    ll.delete_node(1)
+
     ll.print_list()
 
 
