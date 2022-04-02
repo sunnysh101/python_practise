@@ -1,5 +1,6 @@
 from stack import Stack
 
+
 def is_paren_balanced(paren_string):
     s = Stack()
     is_balanced = True
@@ -24,6 +25,7 @@ def is_paren_balanced(paren_string):
         return True
     else:
         return False
+
 
 def is_match(brac1, brac2):
     if brac1 == "(" and brac2 == ")":
