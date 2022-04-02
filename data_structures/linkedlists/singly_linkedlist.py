@@ -60,6 +60,26 @@ class LinkedList:
                 prev_cur = cur
                 cur = cur.next
 
+    def delete_node_at_pos(self, pos):
+        count = 0
+        cur = self.head
+        if cur:
+            if pos == count:
+                self.head = cur.next
+            else:
+                count += 1
+                prev_cur = cur
+                cur = cur.next
+                while cur:
+                    if count == pos:
+                        prev_cur.next = cur.next
+                        cur = None
+                        break
+                    count += 1
+                    prev_cur = cur
+                    cur = cur.next
+
+
 
 def main():
     ll = LinkedList()
@@ -69,10 +89,10 @@ def main():
     ll.prepend(1)
     ll.prepend(2)
     ll.insert_after_node(10, 1000)
-    ll.delete_node(1000)
-    ll.delete_node(15)
-    ll.delete_node(2)
-    ll.delete_node(1)
+
+    ll.print_list()
+    print("====")
+    ll.delete_node_at_pos(7)
 
     ll.print_list()
 
