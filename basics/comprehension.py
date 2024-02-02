@@ -14,7 +14,7 @@ In list comprehension the syntax is used as follows.
 Similarly loops can be nested too
 """
 
-from py import code
+# from py import code
 
 
 nums = [1, 2,3,4,5]
